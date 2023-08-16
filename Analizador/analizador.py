@@ -14,9 +14,13 @@ def execute(tk):
     #Sumamos cada valor
     path = ""
     for x in range(len(tk)):
-        #print(tk[x])
+        
         path = path  +tk[x] + " "
     path_final= path.rstrip()
+
+    # borramos comillas al principio y al final
+    path_final = path_final[1:-1]
+    
 
     with open(path_final,"r") as file:
         for line in file:
@@ -30,13 +34,8 @@ def execute(tk):
                 rep(line)
             
     file.close()            
-
-            #analyze(line)
     
-
-
 def analyze_mkdisk(token_):
-    #print(token_)
     """Creamos el archivo vacio"""
     with open("Salida/Hard_disk.dsk","wb") as file:
         size_kilobyte =1024
@@ -66,8 +65,7 @@ def rep(token_):
         print("Random: " + data_unpack[2].decode())
     file.close()
     
-
-        
+     
 
 def analyze(comando):
 
